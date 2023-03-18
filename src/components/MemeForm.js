@@ -8,6 +8,9 @@ import Col from 'react-bootstrap/Col';
 
 export default function MemeForm(){
 
+  function getMemeImage (){
+    console.log('clicked')
+  }
 
   return (
     <div>
