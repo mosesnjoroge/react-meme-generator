@@ -70,8 +70,8 @@ class MemeForm extends React.Component{
               <Col>
                 <input
                 placeholder="Top text"
-                name = 'toptext'
                 type = 'text'
+                name = 'topText'
                 value={this.state.topText}
                 onChange={this.handleChange}
                 />
@@ -79,8 +79,8 @@ class MemeForm extends React.Component{
               <Col>
                 <input
                 placeholder="Bottom text"
-                name ='bottomtext'
                 type='text'
+                name ='bottomText'
                 value = {this.state.bottomText}
                 onChange={this.handleChange}
                 />
