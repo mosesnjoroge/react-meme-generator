@@ -1,11 +1,15 @@
 import './App.css';
+import Nav from './components/Nav'
+import Form from './components/MemeForm';
+import Meme from './components/MemeDisplay';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-
-      </header>
+      <Nav/>
+      <Form/>
+      <Meme/>
     </div>
   );
 }
