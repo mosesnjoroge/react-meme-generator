@@ -8,14 +8,57 @@ import Col from 'react-bootstrap/Col';
 
 export default function MemeForm(){
 
-  function getMemeImage (){
-    console.log('clicked')
+  state = {
+    topText: "",
+    bottomText: "",
+    allMemeImgs: [],
+    randomImg: ""
+  };
+
+  // componentDidMount() method to fetch
+  // images from the API
+  componentDidMount() {
+
+    // Fetching data from the API
+    fetch("https://api.imgflip.com/get_memes")
+      // Converting the promise received into JSON
+      .then(response => response.json())
+      .then(content =>
+          // Updating state variables
+        this.setState({
+          allMemeImgs: content.data.memes
+        })
+      );
   }
+
+  // Method to change the value of input fields
+  handleChange = event => {
+    // Destructuring the event. target object
+    const { name, value } = event.target;
+
+    // Updating the state variable
+    this.setState({
+      [name]: value
+    });
+  };
+
+  // Method to submit from and create meme
+  handleSubmit = event => {
+    event.preventDefault();
+    const { allMemeImgs } = this.state;
+    const rand =
+      allMemeImgs[Math.floor(Math.random()
+      * allMemeImgs.length)].url;
+    this.setState({
+      randomImg: rand
+    });
+  };
+
 
   return (
     <div>
       <Container className="mt-4">
-        <Form>
+        <Form onSubmit={this.handleSubmit}>
           <Row>
             <Col>
               <Form.Control placeholder="Top text" />
