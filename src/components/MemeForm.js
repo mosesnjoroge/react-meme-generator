@@ -61,10 +61,22 @@ export default function MemeForm(){
         <Form onSubmit={this.handleSubmit}>
           <Row>
             <Col>
-              <Form.Control placeholder="Top text" />
+              <Form.Control
+              placeholder="Top text"
+              name = 'toptext'
+              type = 'text'
+              value={this.state.topText}
+              onChange={this.handleChange}
+              />
             </Col>
             <Col>
-              <Form.Control placeholder="Bottom text" />
+              <Form.Control
+              placeholder="Bottom text"
+              name ='bottomtext'
+              type='text'
+              value = {this.state.bottomText}
+              onChange={this.handleChange}
+              />
             </Col>
           </Row>
           <div className="d-grid gap-2 mt-3">
