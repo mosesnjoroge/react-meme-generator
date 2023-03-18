@@ -1,7 +1,8 @@
 import './App.css';
 import Nav from './components/Nav'
-import Form from './components/form';
-import Meme from './components/meme';
+import Form from './components/Form';
+import Meme from './components/Meme';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
