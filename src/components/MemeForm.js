@@ -6,7 +6,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-
 class MemeForm extends React.Component{
 
   constructor (props){
@@ -88,13 +87,13 @@ class MemeForm extends React.Component{
               </Col>
             </Row>
             <div className="d-grid gap-2 mt-3">
-              <Button variant="dark" size="lg" onCLick={this.handleSubmit}>
+              <Button variant="dark" size="lg" onClick={this.handleSubmit}>
                 Get a new meme image
               </Button>
             </div>
           </Form>
           <div>
-            <div className="meme">
+            <div className="meme mt-3">
               {this.state.randomImg === "" ? "" :
                 <img src={this.state.randomImg} alt="meme" />}
               {this.state.randomImg === "" ? "" :
