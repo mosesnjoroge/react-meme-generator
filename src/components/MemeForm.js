@@ -77,7 +77,7 @@ class MemeForm extends React.Component{
                 />
               </Col>
               <Col>
-                <Form.Control
+                <input
                 placeholder="Bottom text"
                 name ='bottomtext'
                 type='text'

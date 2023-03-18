@@ -1,7 +1,6 @@
 import './App.css';
 import Nav from './components/Nav'
-import Form from './components/MemeForm';
-import Meme from './components/MemeDisplay';
+import MemeForm from './components/MemeForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -10,8 +9,7 @@ function App() {
   return (
     <div className="App">
       <Nav/>
-      <Form/>
-      <Meme/>
+      <MemeForm/>
     </div>
   );
 }
