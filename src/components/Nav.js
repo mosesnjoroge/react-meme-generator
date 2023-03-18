@@ -18,6 +18,9 @@ export default function Nav(){
           />{' '} */}
           Meme Generator
         </Navbar.Brand>
+        <h3>
+          React Course - Project 3
+        </h3>
       </Container>
     </Navbar>
 

@@ -5,8 +5,10 @@ export default function Meme(){
 
 
   return (
-    <Container>
+    <div>
+      <Container>
 
-    </Container>
+      </Container>
+    </div>
   );
 }
