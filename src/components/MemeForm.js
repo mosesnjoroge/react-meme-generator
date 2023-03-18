@@ -6,18 +6,25 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-export default function MemeForm(){
 
-  state = {
-    topText: "",
-    bottomText: "",
-    allMemeImgs: [],
-    randomImg: ""
-  };
+class MemeForm extends React.Component{
+
+  constructor (props){
+    super(props);
+    this.state = {
+      topText: "",
+      bottomText: "",
+      allMemeImgs: [],
+      randomImg: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
 
   // componentDidMount() method to fetch
   // images from the API
-  componentDidMount() {
+  componentDidMount = ()=>{
 
     // Fetching data from the API
     fetch("https://api.imgflip.com/get_memes")
@@ -43,7 +50,7 @@ export default function MemeForm(){
   };
 
   // Method to submit from and create meme
-  handleSubmit = event => {
+  handleSubmit = event =>{
     event.preventDefault();
     const { allMemeImgs } = this.state;
     const rand =
@@ -54,38 +61,52 @@ export default function MemeForm(){
     });
   };
 
+  render(){
 
-  return (
-    <div>
-      <Container className="mt-4">
-        <Form onSubmit={this.handleSubmit}>
-          <Row>
-            <Col>
-              <Form.Control
-              placeholder="Top text"
-              name = 'toptext'
-              type = 'text'
-              value={this.state.topText}
-              onChange={this.handleChange}
-              />
-            </Col>
-            <Col>
-              <Form.Control
-              placeholder="Bottom text"
-              name ='bottomtext'
-              type='text'
-              value = {this.state.bottomText}
-              onChange={this.handleChange}
-              />
-            </Col>
-          </Row>
-          <div className="d-grid gap-2 mt-3">
-            <Button variant="dark" size="lg">
-              Get a new meme image
-            </Button>
+    return (
+      <div>
+        <Container className="mt-4">
+          <Form onSubmit={this.handleSubmit}>
+            <Row>
+              <Col>
+                <input
+                placeholder="Top text"
+                name = 'toptext'
+                type = 'text'
+                value={this.state.topText}
+                onChange={this.handleChange}
+                />
+              </Col>
+              <Col>
+                <Form.Control
+                placeholder="Bottom text"
+                name ='bottomtext'
+                type='text'
+                value = {this.state.bottomText}
+                onChange={this.handleChange}
+                />
+              </Col>
+            </Row>
+            <div className="d-grid gap-2 mt-3">
+              <Button variant="dark" size="lg" onCLick={this.handleSubmit}>
+                Get a new meme image
+              </Button>
+            </div>
+          </Form>
+          <div>
+            <div className="meme">
+              {this.state.randomImg === "" ? "" :
+                <img src={this.state.randomImg} alt="meme" />}
+              {this.state.randomImg === "" ? "" :
+                <h2 className="top">{this.state.topText}</h2>}
+              {this.state.randomImg === "" ? "" :
+                <h2 className="bottom">{this.state.bottomText}</h2>}
+            </div>
           </div>
-        </Form>
-      </Container>
-    </div>
-  );
+        </Container>
+      </div>
+    );
+  }
 }
+
+export default MemeForm
