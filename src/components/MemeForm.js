@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -39,22 +38,22 @@ class MemeForm extends React.Component{
 
   // Method to change the value of input fields
   handleChange = event => {
-    // Destructuring the event. target object
+    // Destructuring the event.target object
     const { name, value } = event.target;
 
     // Updating the state variable
     this.setState({
       [name]: value
     });
+
   };
 
-  // Method to submit from and create meme
+  // Method to submit form and create meme
   handleSubmit = event =>{
     event.preventDefault();
     const { allMemeImgs } = this.state;
-    const rand =
-      allMemeImgs[Math.floor(Math.random()
-      * allMemeImgs.length)].url;
+    const rand = allMemeImgs[
+      Math.floor(Math.random() * allMemeImgs.length)].url;
     this.setState({
       randomImg: rand
     });
@@ -65,23 +64,23 @@ class MemeForm extends React.Component{
     return (
       <div>
         <Container className="mt-4">
-          <Form onSubmit={this.handleSubmit}>
+          <div onSubmit={this.handleSubmit}>
             <Row>
               <Col>
                 <input
                 placeholder="Top text"
-                name = 'toptext'
                 type = 'text'
                 value={this.state.topText}
+                name = 'topText'
                 onChange={this.handleChange}
                 />
               </Col>
               <Col>
                 <input
                 placeholder="Bottom text"
-                name ='bottomtext'
                 type='text'
                 value = {this.state.bottomText}
+                name ='bottomText'
                 onChange={this.handleChange}
                 />
               </Col>
@@ -91,7 +90,7 @@ class MemeForm extends React.Component{
                 Get a new meme image
               </Button>
             </div>
-          </Form>
+          </div>
           <div>
             <div className="meme mt-3">
               {this.state.randomImg === "" ? "" :
