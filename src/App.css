@@ -2,16 +2,18 @@
   text-align: center;
 }
 
-.top {
-  color:whitesmoke;
-  border-color: black;
+.meme{
   position: relative;
-  bottom: 370;
+  justify-content: center;
 }
 
-.bottom{
-  color:whitesmoke;
-  border-color: black;
-  position: relative;
-  bottom: 370;
+.meme--image{
+  position: inherit;
+  max-width: 500px;
+}
+
+.meme--text {
+  color:rgb(246, 246, 246);
+  text-shadow: 5px 5px 8px #0c0c0c;
+
 }
