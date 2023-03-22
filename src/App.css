@@ -1,3 +1,17 @@
 .App {
   text-align: center;
 }
+
+.top {
+  color:whitesmoke;
+  border-color: black;
+  position: relative;
+  bottom: 370;
+}
+
+.bottom{
+  color:whitesmoke;
+  border-color: black;
+  position: relative;
+  bottom: 370;
+}

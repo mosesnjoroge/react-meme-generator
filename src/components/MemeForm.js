@@ -94,7 +94,7 @@ class MemeForm extends React.Component{
           <div>
             <div className="meme mt-3">
               {this.state.randomImg === "" ? "" :
-                <img src={this.state.randomImg} alt="meme" />}
+                <img className = 'memeimage'src={this.state.randomImg} alt="meme" />}
               {this.state.randomImg === "" ? "" :
                 <h2 className="top">{this.state.topText}</h2>}
               {this.state.randomImg === "" ? "" :
