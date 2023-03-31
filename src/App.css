@@ -1,3 +1,19 @@
 .App {
   text-align: center;
 }
+
+.meme{
+  position: relative;
+  justify-content: center;
+}
+
+.meme--image{
+  position: inherit;
+  max-width: 500px;
+}
+
+.meme--text {
+  color:rgb(246, 246, 246);
+  text-shadow: 5px 5px 8px #0c0c0c;
+  position: absolute;
+}
