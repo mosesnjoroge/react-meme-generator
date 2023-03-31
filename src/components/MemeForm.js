@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-// top text and bottom text need to print on top meme
+// top text and bottom text needed to print on top meme
 class MemeForm extends React.Component{
 
   constructor (props){
@@ -20,8 +20,7 @@ class MemeForm extends React.Component{
   }
 
 
-  // componentDidMount() method to fetch
-  // images from the API
+  // componentDidMount() method to fetch images from the API
   componentDidMount = ()=>{
 
     // Fetching data from the API
