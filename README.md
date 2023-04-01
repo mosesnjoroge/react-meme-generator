@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# REACT - MEME - GENERATOR
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app creates a meme by randomly generating an image using an api call and based on the inputed text displays the meme.This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
