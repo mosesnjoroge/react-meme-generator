@@ -20,7 +20,7 @@ class MemeForm extends React.Component{
   }
 
 
-  // componentDidMount() method to fetch images from the API
+  // componentDidMount() method to fetchimages from the API
   componentDidMount = ()=>{
 
     // Fetching data from the API
@@ -92,7 +92,10 @@ class MemeForm extends React.Component{
           </div>
           <div>
             <div className="meme container mt-3">
-              <img src={this.state.randomImg} alt="meme" className="meme--image"/>
+            { this.state.randomImg === "" ?
+              <img alt = ""/> :
+              <img src={this.state.randomImg} alt = "meme" className="meme--image"/>
+            }
               <h2 className="meme--text top">{this.state.topText}</h2>
               <h2 className="meme--text bottom">{this.state.bottomText}</h2>
             </div>
